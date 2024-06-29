@@ -202,15 +202,8 @@ local Window = Parvus.Utilities.UI:Window({
         local IntelSection = MiscTab:Section({Name = "Intel ESP", Side = "Left"}) do
             IntelSection:Toggle({Name = "Enabled", Flag = "BRM5/ESP/Intel/Enabled", Value = false})
             :Colorpicker({Flag = "BRM5/ESP/Intel/Color", Value = {1, 0, 1, 0.5, false}})
-            IntelSection:Toggle({Name = "Distance Check", Flag = "BRM5/ESP/Intel/DistanceCheck", Value = false})
+            IntelSection:Toggle({Name = "Distance Check", Flag = "BRM5/ESP/Intel/DistanceCheck", Value = true})
             IntelSection:Slider({Name = "Distance", Flag = "BRM5/ESP/Intel/Distance", Min = 25, Max = 5000, Value = 1000, Unit = "studs"})
-            --[[IntelSection:Button({Name = "Load all Intels", Callback = function()
-                for Index, Item in pairs(RaycastFolder:GetChildren()) do
-                    if not Item:GetAttribute("Compound") then continue end
-
-                    Parvus.Utilities.Drawing:AddObject(Item, Item.Name, Item.PrimaryPart, "BRM5/ESP/Intel", "BRM5/ESP/Intel", Window.Flags)
-                end
-            end}):Tooltip("VERY RISKY\nYOU MIGHT CRASH")]]
         end
         local WeaponSection = MiscTab:Section({Name = "Weapon"}) do
             WeaponSection:Toggle({Name = "Recoil", Flag = "BRM5/Recoil/Enabled", Value = false})
