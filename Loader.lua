@@ -1,6 +1,8 @@
 repeat task.wait() until game.IsLoaded
 repeat task.wait() until game.GameId ~= 0
 
+print("hi")
+
 if Parvus and Parvus.Loaded then
     Parvus.Utilities.UI:Push({
         Title = "Parvus Hub",
@@ -72,8 +74,6 @@ LocalPlayer.OnTeleport:Connect(function(State)
     end
 end)
 
-Parvus.Game = GetGameInfo()
-LoadScript(Parvus.Game.Script)
 Parvus.Loaded = true
 
 Parvus.Utilities.UI:Push({
