@@ -1,3 +1,6 @@
+
+print("hi")
+task.wait(9e9)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
