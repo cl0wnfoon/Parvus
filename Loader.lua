@@ -80,6 +80,8 @@ LocalPlayer.OnTeleport:Connect(function(State)
 end)
 
 Parvus.Game = GetGameInfo()
+print("hi")
+task.wait(9e9)
 LoadScript(Parvus.Game.Script)
 Parvus.Loaded = true
 
