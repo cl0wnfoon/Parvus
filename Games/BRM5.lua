@@ -1,6 +1,3 @@
-
-print("hi")
-task.wait(9e9)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
@@ -924,8 +921,6 @@ end)
 Workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
     Camera = Workspace.CurrentCamera
 end)
-print("hi")
-				task.wait(9e9)
 
 for Index, Item in pairs(RaycastFolder:GetChildren()) do
     if not Item:GetAttribute("Compound") then continue end
