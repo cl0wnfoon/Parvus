@@ -61,8 +61,6 @@ getgenv().Parvus = {
     }
 }
 
-Parvus.Cursor = GetFile("Utilities/ArrowCursor.png")
-Parvus.Loadstring = GetFile("Utilities/Loadstring")
 Parvus.Loadstring = Parvus.Loadstring:format(
     Parvus.Source, Branch, NotificationTime, tostring(IsLocal)
 )
