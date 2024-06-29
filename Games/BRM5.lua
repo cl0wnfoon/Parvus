@@ -921,7 +921,7 @@ end)
 Workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
     Camera = Workspace.CurrentCamera
 end)
-
+print("hi")
 				task.wait(9e9)
 
 for Index, Item in pairs(RaycastFolder:GetChildren()) do
