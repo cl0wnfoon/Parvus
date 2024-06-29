@@ -63,10 +63,6 @@ getgenv().Parvus = {
     }
 }
 
-Parvus.Loadstring = Parvus.Loadstring:format(
-    Parvus.Source, Branch, NotificationTime, tostring(IsLocal)
-)
-
 LocalPlayer.OnTeleport:Connect(function(State)
     if State == Enum.TeleportState.InProgress then
         --ClearTeleportQueue()
