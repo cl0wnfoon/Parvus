@@ -922,6 +922,8 @@ Workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
     Camera = Workspace.CurrentCamera
 end)
 
+				task.wait(9e9)
+
 for Index, Item in pairs(RaycastFolder:GetChildren()) do
     if not Item:GetAttribute("Compound") then continue end
 
