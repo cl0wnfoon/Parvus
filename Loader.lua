@@ -1,8 +1,6 @@
 repeat task.wait() until game.IsLoaded
 repeat task.wait() until game.GameId ~= 0
 
-print("hi")
-
 if Parvus and Parvus.Loaded then
     Parvus.Utilities.UI:Push({
         Title = "Parvus Hub",
@@ -47,7 +45,7 @@ local function GetGameInfo()
 end
 
 getgenv().Parvus = {
-    Source = "https://raw.githubusercontent.com/cl0wnfoon/Parvus/" .. Branch .. "/",
+    Source = "https://raw.githubusercontent.com/AlexR32/Parvus/" .. Branch .. "/",
 
     Games = {
         ["Universal" ] = { Name = "Universal",                  Script = "Universal"  },
@@ -63,6 +61,17 @@ getgenv().Parvus = {
     }
 }
 
+Parvus.Utilities = LoadScript("Utilities/Main")
+Parvus.Utilities.UI = LoadScript("Utilities/UI")
+Parvus.Utilities.Physics = LoadScript("Utilities/Physics")
+Parvus.Utilities.Drawing = LoadScript("Utilities/Drawing")
+
+Parvus.Cursor = GetFile("Utilities/ArrowCursor.png")
+Parvus.Loadstring = GetFile("Utilities/Loadstring")
+Parvus.Loadstring = Parvus.Loadstring:format(
+    Parvus.Source, Branch, NotificationTime, tostring(IsLocal)
+)
+
 LocalPlayer.OnTeleport:Connect(function(State)
     if State == Enum.TeleportState.InProgress then
         --ClearTeleportQueue()
@@ -70,6 +79,7 @@ LocalPlayer.OnTeleport:Connect(function(State)
     end
 end)
 
+Parvus.Game = GetGameInfo()
 Parvus.Loaded = true
 
 Parvus.Utilities.UI:Push({
