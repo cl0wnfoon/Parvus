@@ -238,11 +238,13 @@ elseif game.GameId == 358276974 or game.GameId == 3495983524 then -- Apocalypse 
     --function GetTeam(Target, Character, Mode) end
 elseif game.GameId == 1054526971 then -- Blackhawk Rescue Mission 5
     local function RequireModule(Name)
-        for Index, Instance in pairs(getmodules()) do
-            if Instance.Name == Name then
-                return require(Instance)
-            end
+        for _, v in pairs(game:GetDescendants()) do
+    if v:IsA("ModuleScript") then
+        if v.Name == Name then
+            return require(v)
         end
+    end
+end
     end
 
     repeat task.wait() until RequireModule("RoundInterface")
