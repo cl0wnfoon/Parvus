@@ -1,4 +1,5 @@
 task.wait(10)
+
 local UserInputService = game:GetService("UserInputService")
 local InsertService = game:GetService("InsertService")
 local RunService = game:GetService("RunService")
