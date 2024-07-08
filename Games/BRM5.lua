@@ -922,6 +922,9 @@ Workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
     Camera = Workspace.CurrentCamera
 end)
 
+				print("byethere")
+				
+--[[
 for Index, Item in pairs(RaycastFolder:GetChildren()) do
     if not Item:GetAttribute("Compound") then continue end
 
@@ -934,6 +937,7 @@ RaycastFolder.ChildAdded:Connect(function(Item) task.wait(1)
     Parvus.Utilities.Drawing:AddObject(Item, Item.Name, Item.PrimaryPart,
     "BRM5/ESP/Intel", "BRM5/ESP/Intel", Window.Flags)
 end)
+
 RaycastFolder.ChildRemoved:Connect(function(Item)
     Parvus.Utilities.Drawing:RemoveObject(Item)
 end)
@@ -946,23 +950,29 @@ for Index, NPC in pairs(NPCFolder:GetChildren()) do
         end
     end)
 end
+
 NPCFolder.ChildAdded:Connect(function(NPC)
     if NPC:WaitForChild("HumanoidRootPart", 5)
     and NPC.HumanoidRootPart:WaitForChild("AlignOrientation", 5) then
         Parvus.Utilities.Drawing:AddESP(NPC, "NPC", "ESP/NPC", Window.Flags)
     end
 end)
+
 NPCFolder.ChildRemoved:Connect(function(NPC)
     Parvus.Utilities.Drawing:RemoveESP(NPC)
-end)
+end)]]
+
+				print("hithere")
 
 for Index, Player in pairs(PlayerService:GetPlayers()) do
     if Player == LocalPlayer then continue end
     Parvus.Utilities.Drawing:AddESP(Player, "Player", "ESP/Player", Window.Flags)
 end
+
 PlayerService.PlayerAdded:Connect(function(Player)
     Parvus.Utilities.Drawing:AddESP(Player, "Player", "ESP/Player", Window.Flags)
 end)
+
 PlayerService.PlayerRemoving:Connect(function(Player)
     Parvus.Utilities.Drawing:RemoveESP(Player)
 end)
