@@ -239,7 +239,7 @@ elseif game.GameId == 358276974 or game.GameId == 3495983524 then -- Apocalypse 
     -- TODO: Squad GetTeam function
     --function GetTeam(Target, Character, Mode) end
 elseif game.GameId == 1054526971 then -- Blackhawk Rescue Mission 5
-    local function RequireModule(Name)
+    --[[local function RequireModule(Name)
         for Index, Instance in pairs(getmodules()) do
             if Instance.Name == Name then
                 return require(Instance)
@@ -266,7 +266,7 @@ elseif game.GameId == 1054526971 then -- Blackhawk Rescue Mission 5
         else
             return not FindFirstChildWhichIsA(Character, "ProximityPrompt", true), WhiteColor
         end
-    end
+    end]]
 elseif game.GameId == 580765040 then -- RAGDOLL UNIVERSE
     function GetCharacter(Target, Mode)
         local Character = Target.Character
